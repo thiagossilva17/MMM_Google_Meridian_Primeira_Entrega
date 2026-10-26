@@ -1,0 +1,32 @@
+{
+  "executed_at_utc": "2026-10-26T09:16:45.289454+00:00",
+  "python": "3.12.14",
+  "versions": {
+    "google-meridian": "2.1.0",
+    "tensorflow": "2.21.0",
+    "tf-keras": "2.21.0",
+    "tfp-nightly": "0.26.0.dev20260130",
+    "jax": "0.12.0.1",
+    "jaxlib": "0.12.0.1",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "xarray": "2026.9.0",
+    "PyYAML": "6.0.3",
+    "pytest": "9.1.1"
+  },
+  "rows": 6240,
+  "columns": 19,
+  "holdout_cells": 936,
+  "split_sha256": "0e9e50021ffa0843b76181d218a9f8d94e6650a9ebc2cda6e33f1ba672bacbde",
+  "result": {
+    "data_ready": "PASS",
+    "holdout_coverage": "PASS",
+    "api": "PASS",
+    "spec_scientific": "REVIEW",
+    "H_COMP": "PENDING_METHOD_DECISION",
+    "hosted_colab": "NOT_TESTED_IN_HOSTED_COLAB",
+    "posterior_sampled": false,
+    "prior_sampled": false,
+    "optimization_executed": false
+  }
+}

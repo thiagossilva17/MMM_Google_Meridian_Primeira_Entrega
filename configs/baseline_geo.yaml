@@ -1,0 +1,83 @@
+meridian_version: 2.1.0
+scientific_status: REVIEW
+outcome: conversions
+kpi_type: non_revenue
+currency_code: null
+parameters:
+  media_effects_dist:
+    value: log_normal
+    status: verified_default
+    reason: Efeitos de mídia positivos; hipótese a investigar.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  media_prior_type:
+    value: contribution
+    status: explicit_choice
+    reason: Evita unidade monetária não validada; Beta(1,99) permanece candidata,
+      não validada cientificamente.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  organic_media_prior_type:
+    value: contribution
+    status: verified_default
+    reason: Orgânico sem gasto; não calcular ROI.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  non_media_treatments_prior_type:
+    value: contribution
+    status: verified_default
+    reason: Promo pode ter contribuição com sinal.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  non_media_baseline_values:
+    value:
+      Promo: 0.0
+    status: explicit_choice
+    reason: Zero observado como intervenção de referência; semântica ainda hipotética.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  max_lag:
+    value: 8
+    status: verified_default
+    reason: Janela de referência, não inferida dos lags exploratórios.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  hill_before_adstock:
+    value: false
+    status: verified_default
+    reason: Adstock antes de Hill.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  unique_sigma_for_each_geo:
+    value: false
+    status: verified_default
+    reason: Referência parcimoniosa na escala transformada.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  knots:
+    value: null
+    status: verified_default
+    reason: 156 knots GEO; nacional teria 1. Comparação futura exige revisão.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  enable_aks:
+    value: false
+    status: verified_default
+    reason: Nenhuma seleção automática executada.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  baseline_geo:
+    value: null
+    status: verified_default
+    reason: Maior população resolve referência; não melhor mercado.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  population_scaled_controls:
+    value: []
+    status: explicit_choice
+    reason: Índices não são volumes extensivos; não dividir por população.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  population_scaled_non_media_channels:
+    value: []
+    status: explicit_choice
+    reason: Promo interpretada como intensidade, hipótese não comprovada.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  adstock_decay_spec:
+    value: geometric
+    status: verified_default
+    reason: Comparar binomial apenas futuramente.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py
+  saturation_spec:
+    value: hill
+    status: verified_default
+    reason: Slope default fixo em 1; não será estimado no candidato inicial.
+    source: https://github.com/google/meridian/blob/cb0be8fe454124aadb73222c579f081f8823edfd/meridian/model/spec.py

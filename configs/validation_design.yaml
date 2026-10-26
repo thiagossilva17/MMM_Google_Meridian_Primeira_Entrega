@@ -1,0 +1,33 @@
+H_GEO:
+  status: proposed_materialized
+  fraction: 0.15
+  seed: 20261026
+  algorithm: PCG64; permutar GEOs e semanas; selecionar seis índices consecutivos
+    em ciclo de 40 a cada semana permutada
+  per_week: 6
+  expected_cells: 936
+  expected_geo_counts:
+  - 23
+  - 24
+  uses_kpi: false
+  persistence: data/splits/holdout_geo.csv
+  coverage_rules:
+    minimum_active_channel2_each_geo_subset: 1
+    max_absolute_activity_fraction_difference: 0.1
+    action_on_violation: REVIEW; não sortear novamente após olhar KPI
+  interpretation: Diagnóstico geotemporal condicionado à mídia observada. Não representa
+    forecasting nem experimento causal. Transformações e priors podem depender da
+    escala global do KPI; não declarar isolamento completo do teste.
+H_COMP:
+  status: PENDING_METHOD_DECISION
+  candidate: Semanas não contíguas compartilhadas, aproximadamente 10%, seed 20261027;
+    não materializado nesta etapa
+  risk: Retirar todos os GEOs em semanas com knots independentes deixa efeitos temporais
+    sem likelihood local. KPI agregado pode vazar se usar H-GEO como se fosse H-COMP.
+  alternatives:
+  - Fixar knots reduzidos com interpolação entre semanas observadas, auditar suporte
+    e efeitos de borda
+  - Comparar estimandos nacionais alinhados no período completo e apresentar validações
+    preditivas distintas sem equivalência
+  gate: Justificar estrutura temporal e transformações usando apenas treino; aprovar
+    protocolo antes de estimar N0.

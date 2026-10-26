@@ -1,0 +1,12 @@
+{
+  "structural_status": "PASS",
+  "python_cells_status": "PASS",
+  "jupyter_kernel_status": "BLOCKED",
+  "kernel_reason": "ZeroMQ TCP e IPC: Operation not permitted",
+  "execution": "Python sequencial, mesmo namespace, todas as células de código; saídas reais capturadas",
+  "hosted_colab": "NOT_TESTED_IN_HOSTED_COLAB",
+  "cells": 18,
+  "executed_code_cells": 7,
+  "error_outputs": 0,
+  "executed_at_utc": "2026-10-26T09:16:58.968711+00:00"
+}

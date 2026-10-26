@@ -1,0 +1,6 @@
+metric,observed,eda_rounded,tolerance,status
+Channel2_zero_fraction,0.6426282051282052,0.643,0.001,PASS
+Channel3_zero_fraction,0.027083333333333334,0.027,0.001,PASS
+Promo_zero_fraction,0.46826923076923077,0.47,0.01,PASS
+Channel2_spend_share,0.05503310917455205,0.055,0.002,PASS
+Channel3_spend_share,0.4002888360053137,0.4,0.01,PASS

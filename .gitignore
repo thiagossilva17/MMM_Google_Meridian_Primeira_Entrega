@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+*.pyc
+.env
+*.pem
+*credentials*.json
+outputs/models/
+*.nc
+*.pkl
+*.tmp

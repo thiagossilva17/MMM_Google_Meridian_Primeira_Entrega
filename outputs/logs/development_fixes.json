@@ -1,0 +1,1 @@
+[{"issue":"Docstring oficial de load.py descreve non-revenue, mas validador instalado 2.1.0 exige non_revenue","initial_status":"FAIL","resolution":"Corrigido kpi_type para non_revenue; reexecução registrada em api_inspection.json"}]

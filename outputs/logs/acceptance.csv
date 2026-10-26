@@ -1,0 +1,18 @@
+item,criterion,observed,evidence,status,remaining_action
+1,Escopo de escrita,Somente repositório Primeira_Entrega; EDA não modificada,git remote; manifesto,PASS,Nenhuma
+2,Leitura e ponte EDA,"Capítulos 1–18, epílogo e A–D mapeados","Guia, matriz E01–E16; fingerprint",PASS,Não reexecutamos EDA completa
+3,Fonte,SHA-256 e Git blob conferidos,provenance.json; data_source.py,PASS,Nenhuma divergência material dos indicadores checados
+4,Painel e alvo,6240x19 analítico; zeros e decimais preservados,data_audit.csv; pytest.xml,PASS,Semântica comercial limitada
+5,InputData,Construção e reconciliação real 2.1.0,api_inspection.json,PASS,Nenhuma
+6,ModelSpec,"Construído junto ao objeto Meridian, sem amostragem",api_inspection.json,PASS,Revisão científica separada
+7,Priors,Distribuições inspecionadas; escolhas documentadas,prior_parameters.json; guia seção 7,REVIEW,"Justificar concentração Beta(1,99) antes de G0"
+8,DAG e pressupostos,Hipótese explícita e registro causal,Guia seção 4; notebook,PASS,Não comprova ausência de confundimento
+9,Holdout GEO,936 células; atividade C2 em todos GEOs nos dois subconjuntos,holdout_*.csv; teste máscara efetiva,PASS,Auditar usos indiretos do KPI no ajuste futuro
+10,Comparação GEO/nacional,Vazamento e knots discutidos; protocolo pendente,validation_design.yaml; guia seção 8,REVIEW,Resolver H-COMP antes da Entrega 4
+11,Experimentos e gates,27 registros planned,experiment_registry.yaml,PASS,Não executar nesta entrega
+12,Testes,17 aprovados; 0 falhados; 0 pulados,pytest.xml,PASS,Aviso genérico de prior documentado
+13,Notebook,nbformat válido; sete células Python executadas; kernel real bloqueado,notebook_validation.json,REVIEW,Executar em kernel Jupyter funcional
+14,Colab hospedado,NOT_TESTED_IN_HOSTED_COLAB,notebook_validation.json; guia seção 11,REVIEW,Executar sessão hospedada e preservar evidência
+15,Guia didático,"Documento único, estimandos, DAG, priors, contratos e limites",docs/01_DESENHO_CIENTIFICO_DIDATICO.md,PASS,Revisão acadêmica do autor
+16,Sem inferência,"Nenhuma amostra prior/posterior, ROI ou otimização",run_manifest.json; teste AST,PASS,Entrega 2 não iniciada
+17,Rastreabilidade Git,Commit local criado; publicação remota recusada,publication_status.json; histórico Git local,BLOCKED,Habilitar permissão de escrita Contents na integração GitHub para o repositório e repetir publicação

@@ -1,0 +1,241 @@
+{
+  "knot_values": {
+    "distribution": "Normal",
+    "parameters": {
+      "loc": 0.0,
+      "scale": 5.0
+    }
+  },
+  "tau_g_excl_baseline": {
+    "distribution": "Normal",
+    "parameters": {
+      "loc": 0.0,
+      "scale": 5.0
+    }
+  },
+  "beta_m": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 5.0
+    }
+  },
+  "beta_rf": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 5.0
+    }
+  },
+  "beta_om": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 5.0
+    }
+  },
+  "beta_orf": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 5.0
+    }
+  },
+  "eta_m": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 1.0
+    }
+  },
+  "eta_rf": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 1.0
+    }
+  },
+  "eta_om": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 1.0
+    }
+  },
+  "eta_orf": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 1.0
+    }
+  },
+  "gamma_c": {
+    "distribution": "Normal",
+    "parameters": {
+      "loc": 0.0,
+      "scale": 5.0
+    }
+  },
+  "gamma_n": {
+    "distribution": "Normal",
+    "parameters": {
+      "loc": 0.0,
+      "scale": 5.0
+    }
+  },
+  "xi_c": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 5.0
+    }
+  },
+  "xi_n": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 5.0
+    }
+  },
+  "alpha_m": {
+    "distribution": "Uniform",
+    "parameters": {
+      "low": 0.0,
+      "high": 1.0
+    }
+  },
+  "alpha_rf": {
+    "distribution": "Uniform",
+    "parameters": {
+      "low": 0.0,
+      "high": 1.0
+    }
+  },
+  "alpha_om": {
+    "distribution": "Uniform",
+    "parameters": {
+      "low": 0.0,
+      "high": 1.0
+    }
+  },
+  "alpha_orf": {
+    "distribution": "Uniform",
+    "parameters": {
+      "low": 0.0,
+      "high": 1.0
+    }
+  },
+  "ec_m": {
+    "distribution": "TruncatedNormal",
+    "parameters": {
+      "loc": 0.8,
+      "scale": 0.8,
+      "low": 0.1,
+      "high": 10.0
+    }
+  },
+  "ec_rf": {
+    "distribution": "TransformedDistribution",
+    "parameters": {}
+  },
+  "ec_om": {
+    "distribution": "TruncatedNormal",
+    "parameters": {
+      "loc": 0.8,
+      "scale": 0.8,
+      "low": 0.1,
+      "high": 10.0
+    }
+  },
+  "ec_orf": {
+    "distribution": "TransformedDistribution",
+    "parameters": {}
+  },
+  "slope_m": {
+    "distribution": "Deterministic",
+    "parameters": {
+      "loc": 1.0
+    }
+  },
+  "slope_rf": {
+    "distribution": "LogNormal",
+    "parameters": {
+      "loc": 0.7,
+      "scale": 0.4
+    }
+  },
+  "slope_om": {
+    "distribution": "Deterministic",
+    "parameters": {
+      "loc": 1.0
+    }
+  },
+  "slope_orf": {
+    "distribution": "LogNormal",
+    "parameters": {
+      "loc": 0.7,
+      "scale": 0.4
+    }
+  },
+  "sigma": {
+    "distribution": "HalfNormal",
+    "parameters": {
+      "scale": 5.0
+    }
+  },
+  "roi_m": {
+    "distribution": "LogNormal",
+    "parameters": {
+      "loc": 0.2,
+      "scale": 0.9
+    }
+  },
+  "roi_rf": {
+    "distribution": "LogNormal",
+    "parameters": {
+      "loc": 0.2,
+      "scale": 0.9
+    }
+  },
+  "mroi_m": {
+    "distribution": "LogNormal",
+    "parameters": {
+      "loc": 0.0,
+      "scale": 0.5
+    }
+  },
+  "mroi_rf": {
+    "distribution": "LogNormal",
+    "parameters": {
+      "loc": 0.0,
+      "scale": 0.5
+    }
+  },
+  "contribution_m": {
+    "distribution": "Beta",
+    "parameters": {
+      "concentration1": 1.0,
+      "concentration0": 99.0
+    }
+  },
+  "contribution_rf": {
+    "distribution": "Beta",
+    "parameters": {
+      "concentration1": 1.0,
+      "concentration0": 99.0
+    }
+  },
+  "contribution_om": {
+    "distribution": "Beta",
+    "parameters": {
+      "concentration1": 1.0,
+      "concentration0": 99.0
+    }
+  },
+  "contribution_orf": {
+    "distribution": "Beta",
+    "parameters": {
+      "concentration1": 1.0,
+      "concentration0": 99.0
+    }
+  },
+  "contribution_n": {
+    "distribution": "TruncatedNormal",
+    "parameters": {
+      "loc": 0.0,
+      "scale": 0.1,
+      "low": -1.0,
+      "high": 1.0
+    }
+  }
+}

@@ -1,0 +1,709 @@
+scope: Somente planejamento; nenhum experimento executado
+gates:
+- data_ready
+- spec_ready
+- sampling_healthy
+- fit_reviewed
+- inference_reviewed
+- optimization_eligible
+experiments:
+- id: G0
+  status: planned
+  future_delivery: 2
+  hypothesis: Configuração GEO de referência
+  changed_factor: nenhum
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 18
+  expected_output: Diagnósticos de referência
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - data_ready
+  - spec_ready
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: G1
+  status: planned
+  future_delivery: 2
+  hypothesis: Modelo sustenta células reservadas
+  changed_factor: holdout H-GEO
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 12
+  expected_output: Erros por GEO e atividade
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - data_ready
+  - spec_ready
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: N0
+  status: planned
+  future_delivery: 4
+  hypothesis: Agregação altera informação inferencial
+  changed_factor: estrutura nacional e agregação documentadas
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 18
+  expected_output: Estimandos alinhados
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: P1
+  status: planned
+  future_delivery: 3
+  hypothesis: Defaults informam pouco ou muito os efeitos
+  changed_factor: referência de priors
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 16
+  expected_output: Prior/posterior
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: P2
+  status: planned
+  future_delivery: 3
+  hypothesis: Menor concentração altera inferência
+  changed_factor: concentração Beta dividida por 2 com média mantida
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 15
+  expected_output: Sensibilidade intervalos
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: P3
+  status: planned
+  future_delivery: 3
+  hypothesis: Maior concentração domina os dados
+  changed_factor: concentração Beta multiplicada por 2 com média mantida
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 15
+  expected_output: Deslocamento das médias
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: P4
+  status: planned
+  future_delivery: 3
+  hypothesis: Parametrização modifica conclusões
+  changed_factor: ROI versus contribuição, somente com unidades validadas
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 2
+  expected_output: Estimandos na mesma unidade
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: A1
+  status: planned
+  future_delivery: 3
+  hypothesis: Janela de referência é suficiente
+  changed_factor: max_lag=8 referência
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 14
+  expected_output: Posterior alpha e cauda
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: A2
+  status: planned
+  future_delivery: 3
+  hypothesis: Janela curta altera efeitos
+  changed_factor: max_lag=4
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 14
+  expected_output: Estabilidade contribuição
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: A3
+  status: planned
+  future_delivery: 3
+  hypothesis: Janela longa altera efeitos
+  changed_factor: max_lag=12
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 14
+  expected_output: Estabilidade contribuição
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: A4
+  status: planned
+  future_delivery: 3
+  hypothesis: Forma da persistência importa
+  changed_factor: adstock binomial
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 14
+  expected_output: Forma e incerteza
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: S1
+  status: planned
+  future_delivery: 3
+  hypothesis: Ordem das transformações importa
+  changed_factor: hill_before_adstock=True
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 15
+  expected_output: Curvas e ajuste
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: S2
+  status: planned
+  future_delivery: 3
+  hypothesis: Slope livre acrescenta informação
+  changed_factor: prior slope não degenerada, a justificar
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 15
+  expected_output: Identificabilidade de slope/ec
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: K1
+  status: planned
+  future_delivery: 3
+  hypothesis: Flexibilidade temporal default é defensável
+  changed_factor: knots=None referência GEO
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 4
+  expected_output: Baseline e contribuição
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: K2
+  status: planned
+  future_delivery: 3
+  hypothesis: Menos knots preservam mídia
+  changed_factor: knots=13
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 4
+  expected_output: Sensibilidade temporal
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: K3
+  status: planned
+  future_delivery: 3
+  hypothesis: Flexibilidade intermediária preserva mídia
+  changed_factor: knots=26
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 4
+  expected_output: Sensibilidade temporal
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: K4
+  status: planned
+  future_delivery: 3
+  hypothesis: AKS tem utilidade verificável
+  changed_factor: enable_aks=True; knots=None
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 4
+  expected_output: Complexidade selecionada
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: C1
+  status: planned
+  future_delivery: 3
+  hypothesis: Controles afetam atribuição
+  changed_factor: um controle por execução, com DAG alternativo
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 13
+  expected_output: Viés potencial e estabilidade
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: C2
+  status: planned
+  future_delivery: 3
+  hypothesis: Orgânico compete com mídia paga
+  changed_factor: representação orgânica com DAG alternativo
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 15
+  expected_output: Contribuição conjunta
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: C3
+  status: planned
+  future_delivery: 3
+  hypothesis: Promo depende de sua escala e intervenção
+  changed_factor: baseline alternativo justificado
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 13
+  expected_output: Contribuição Promo
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: C2_SPARSE
+  status: planned
+  future_delivery: 3
+  hypothesis: Exposição esparsa limita atualização
+  changed_factor: análise Channel2 nos modelos já planejados
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 12
+  expected_output: Atividade, posterior e prior
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: C3_CONTINUOUS
+  status: planned
+  future_delivery: 3
+  hypothesis: Exposição contínua compete com baseline
+  changed_factor: análise Channel3 nos modelos K
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 14
+  expected_output: Estabilidade com knots
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: GEO_HET
+  status: planned
+  future_delivery: 3
+  hypothesis: Heterogeneidade é estimável
+  changed_factor: unique_sigma_for_each_geo=True em execução separada
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 6–9
+  expected_output: Pooling e incerteza por GEO
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: GEO_NAT
+  status: planned
+  future_delivery: 4
+  hypothesis: GEO pode melhorar estabilidade, sem vitória obrigatória
+  changed_factor: comparação operacional e temporal controlada separadas
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 18
+  expected_output: Mesmos estimandos e horizonte
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: INFLUENCE
+  status: planned
+  future_delivery: 3
+  hypothesis: Extremos influenciam conclusões
+  changed_factor: um caso preservado por análise de influência
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Cap. 16
+  expected_output: Diferenças de estimandos
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: F0
+  status: planned
+  future_delivery: 5
+  hypothesis: Especificação é consolidável
+  changed_factor: congelamento após revisão
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Epílogo
+  expected_output: Manifesto final
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
+- id: O0
+  status: planned
+  future_delivery: 5
+  hypothesis: Realocação condicionada gera ganho estável
+  changed_factor: orçamento fixo, limites predefinidos
+  fixed_factors: Dados, seed, canais e demais parâmetros do comparador; registrar
+    toda exceção
+  eda_evidence: Epílogo
+  expected_output: Ganho e incerteza sem promessa real
+  diagnostics:
+  - Rhat
+  - ESS
+  - traces
+  - PPC
+  - baseline
+  - estabilidade inferencial
+  decision_criterion: Revisar se Rhat>1.01, ESS bulk/tail<400, instabilidade material
+    ou falta de suporte; não escolher pelo ROI
+  confounding_risk: Transformações e regularização podem mudar identificação; ajuste
+    não demonstra causalidade
+  depends_on:
+  - sampling_healthy
+  - fit_reviewed
+  - inference_reviewed
+  configuration_status: Protocolo; parâmetros adicionais devem ser congelados antes
+    da execução
